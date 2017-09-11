@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+        <title>Дневник инженеров АСУ ТП</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/index.css"/>
+         <script src="/js/jquery-3.2.1.min.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            
+		<nav><a href="/filter" >Сообщения</a>
+		<a href="/placeView" >Места</a>
+		</nav>
+		<h3> Сообщения дежурных АСУ ТП уровня 1.</h3>
+		<div id="txt_data">
+		<p> На сайте собраны сообщения дежурных АСУ ТП уровня 1 в период с 2007 по 2012 год. Каждое сообщение относится к определенному месту
+		и объекту имеет дату и номер бригады. Имеется возможность добавлять удалять и редактировать сообщения, показывать сообщения для определенной даты. Вывод сообщений осуществляется постранично число сообщений на странице можно изменять. Для просмотра сообщений необходимо перейти по ссылке "Сообщения".</p>
+		<p>Сайт сделан на платфрорме Spring Boot база данных PostgreSQL. Имеется возможность расширения перечня мест и объектов и организации записи сообщений дежурного персонала для всех служб АСУ ТП.</p>
+		</div>
+        </div>
+        <script type="text/javascript">
+        $("body").bind("onload",init());
+        function init(){
+        
+        	
+
+        }
+        
+        </script>
+    </body>
+</html>

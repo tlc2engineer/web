@@ -1,0 +1,63 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/locales/bootstrap-datepicker.ru.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/placeView.css"/>
+</head>
+<body onload="init()">
+<div class="container">
+	<a href="/" >Главная страница</a>
+	
+	<br/>
+	<h2>Список мест</h2>
+	<br/>
+	<div id="place_data"></div>
+</div>
+	<script type="text/javascript" th:inline="javascript">
+	/*<![CDATA[*/
+	var places;
+	function init(){
+		
+		
+		// $("#place_selector").bind("change",onChange);
+         $.getJSON("/get_places", function(json){
+             places=json;
+            
+             $("#place_data").html("<table></table>");
+             $("#place_data table").append("<tr><th>Номер</th><th>Имя</th><th>Объекты</th></tr>")
+             for(i=0;i<places.length;i++){
+            	 objects=places[i]["pobjectlist"];
+            	 obj_names="";
+            	 for(j=0;j<objects.length;j++){
+            		 obj_names=obj_names+objects[j]["name"]+"";
+            		 if(j!=objects.length-1)
+            		 	obj_names+=", ";
+            	 }
+            	 $("#place_data table").append("<tr><td>"+i+"</td><td>"+places[i]["name"]+"</td><td><span>"+obj_names+"</span></td></tr>");
+          	   
+             }
+             $('#place_data table tr').bind("click",onClick);
+            
+
+         });
+         
+     	
+             
+	}
+	function onClick(tr){
+ 		
+ 		//$('#log_data tr').addClass("nonselected");
+ 		$('#place_data table tr').removeClass("selected");
+ 		$(this).addClass("selected");
+ 		//sel_id=$(this).children("td:first").html();
+ 		//alert(sel_id);
+ 		
+ 	}
+	/*]]>*/
+	</script>
+</body>
+</html>

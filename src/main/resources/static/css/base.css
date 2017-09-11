@@ -1,0 +1,131 @@
+#log_data{
+    border: solid 1px #5bc0de;
+  	width: 100%;
+  	background: aqua;
+    border: 5px solid #000; /* Рамка вокруг таблицы */
+}
+
+
+body {
+   background-image: url('/img/phone_b.png'); 
+}
+#data_div {
+    height: 500px;
+    overflow: auto;
+}
+a {
+	font-size: 15pt;
+	margin-right:10px;
+}
+#log_data th {
+	margin: 10px;
+	text-align: center;
+}
+#log_data tr>td {
+	
+	
+	margin-left:10px;
+	
+}
+
+#log_data tr:nth-child(1) {
+    background: #666; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+   } 
+   
+ #log_data tr td:nth-child(1) {
+   width: 70px;
+   text-align: left;
+   text-align: center;
+   color: #514fa2;
+   } 
+   #log_data tr td:nth-child(2) {
+   width: 80px;
+   text-align: center;
+   font-size:13pt;
+    color: #514fa2;
+   }
+   #log_data tr td:nth-child(3) {
+   width: 120px;
+   text-align: center;
+   color: #514fa2;
+   }
+    #log_data tr td:nth-child(4) {
+   width: 150px;
+   text-align: left;
+   color: #514fa2;
+  
+   }
+     #log_data tr td:nth-child(5) {
+  width: 150px;
+   text-align: left;
+  font-size: 12pt;
+   color: #514fa2;
+  
+   }
+    #log_data tr td:nth-child(6) {
+   color: blue;
+   font-size: 14pt;
+  
+  
+   }
+
+.alarm {
+	color: red;
+}
+
+select {
+	width: 200px;
+}
+.nonselected{
+	color: black;
+	background: #ffffff;
+}
+.selected{
+	color: blue;
+	background: #ffffff;
+}
+
+#filter,#navigate{
+	background: #000000;
+	border: 1px;
+	color: red;
+	margin-bottom:10px;
+	
+}
+.datepicker{
+	width: 100px;
+	
+}
+#navigate input {
+	width: 100px;
+	margin-right:10px;
+	margin-left:10px;
+	color:black;
+	font-size: 13pt;
+}
+#filter input,select{
+	margin-left:10px;
+	color:black;
+	font-size: 13pt;
+}
+#lastMessage{
+	
+}
+#pageCount {
+	color: black;
+	background: white;
+	margin-left:5px;
+	margin-right:15px;
+	height: 40px;
+	width: 60px;
+	font-size: 15pt;
+}
+.alarm {
+	color: red;
+	font-size: 15pt;
+}
+.info {
+	color: blue;
+	font-size: 15pt;
+}

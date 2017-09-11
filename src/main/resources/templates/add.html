@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/locales/bootstrap-datepicker.ru.min.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/add.css"/>
+</head>
+<body onload="init()">
+
+<div class="container">
+<a href="/filter">Сообщения</a>
+<h3 >Добавление записи </h3>
+
+<form action="#" th:action="@{/add}" th:object="${log}" method="post">
+	<strong>Текст:</strong>
+	<br/>
+    <p> <textarea rows="10" cols="80" name="text" th:field="*{text}" /></p>
+    <table id="add_form_table">
+    <tr>
+   <td> Смена</td>
+  	<td>
+	<select  id="change_selector" th:field="*{change}">
+				<option width="100"  th:each="change : ${changes}" th:value="${change.name}" th:text="${change.name}" >${change.name}</option>
+	</select>
+	</td>
+	</tr>
+   <td> Дата</td>
+   <td>
+	<input type="text" class="datepicker" th:field="*{date}" value="10.09.2015" />
+	</td>
+   <tr> 
+   <td>Бригада</td>
+   <td>
+    <select id="brig_select" th:field="*{brig}">
+       <option width="100"  th:each="brigade : ${brigades}" th:value="${brigade.name}" th:text="${brigade.name}" ></option>
+
+    </select>
+    </td>
+   </tr>
+    <tr>
+   <td> Mесто</td><td>
+    <select  th:field="*{place}" id="place_selector">
+        <option width="100"  th:each="place : ${places}" th:value="${place.name}" th:text="${place.name}" ></option>
+    </select>
+    </td>
+    </tr>
+    <tr>
+    <td>
+        Объект
+        </td>    
+        <td>
+        <select  th:field="*{object}" id="object_selector">
+            <option width="100"  th:each="obj : ${objects}" th:value="${obj.id}" th:text="${obj.name}"></option>
+        </select>
+        </td>
+    </tr>
+    </table>
+    <p><input id="add_btn" type="submit" value="Добавить" /> </p>
+</form>
+<p th:text="${message}" th:class="${messClass}" >Message</p>
+</div>
+
+<script th:inline="javascript">
+/*<![CDATA[*/
+            var places;
+            function init(){
+            	$('.datepicker').datepicker({
+           		 format: 'dd.mm.yyyy',
+           		 language: "ru"
+           		
+           	});
+               $("#place_selector").bind("change",onChange);
+                $.getJSON("/places", function(json){
+                    places=json;
+                    onChange();
+
+                });
+
+             // var places=eval($("#places").html());
+             // alert(places);
+            }
+            function onChange(){
+                var selectorPlace=document.getElementById("place_selector");
+                var selectorObject=document.getElementById("object_selector");
+                var ind=selectorPlace.selectedIndex;
+                place=selectorPlace.options[ind].value;
+                objects=places[ind]["pobjectlist"];
+                leng=objects.length;
+                selectorObject.options.length=0;
+               // alert(objects[0]["name"]);
+               
+               for(i=0;i<objects.length;i++){
+            	   var opt = new Option(objects[i]["name"]); 
+            	   selectorObject.options[i] = opt;
+               }
+               
+            }
+            /*]]>*/
+        </script>
+       
+</body>
+</html>

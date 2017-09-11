@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Бригады</title>
+</head>
+<body>
+<h1>Бригады</h1>
+<ol th:each="brigade : ${brigades}">
+	<li th:text="${brigade.name}" >Первая бригада
+</li>
+</ol>
+</body>
+</html>

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+body {
+    background-image: url('/img/phone_b.png'); 
+}
+a {
+	font-size: 15pt;
+		color: #514fa2;
+}
+
+table {
+	 border: solid 1px #5bc0de;
+  	width: 100%;
+  	background: aqua;
+    border: 5px solid #000; 
+}
+
+table tr:nth-child(1) {
+    background: #666; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+   } 
+  
+  table tr td:nth-child(1) {
+   width: 60px;
+   text-align: left;
+ 
+   color: #514fa2;
+   } 
+    table tr td:nth-child(2) {
+   width: 200px;
+   text-align: justify;
+   font-size:13pt;
+    color: #514fa2;
+   }
+     table tr td:nth-child(3) {
+  
+  
+ 	color: blue;
+   font-size: 13pt;
+  
+  
+   }
+   table tr td:nth-child(3) span{
+   margin-top: 20px;
+   }
+   .nonselected{
+	color: black;
+	background: #ffffff;
+}
+.selected{
+	color: blue;
+	background: #ffffff;
+}
+h2 {
+	width: 100%;
+	 color: #514fa2;
+	text-align: center;
+	
+}

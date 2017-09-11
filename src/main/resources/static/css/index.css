@@ -1,0 +1,26 @@
+@charset "UTF-8";
+body {
+  
+    text-aligh: justify;
+    background-image: url('/img/phone_b.png'); 
+}
+a {
+	font-size: 15pt;
+	margin-right: 15px;
+}
+p{
+	text-indent: 3em; 
+	font-size: 14pt;
+	text-align: justify;
+	color: blue;
+	background: aqua;
+	
+}
+#txt_data{
+	
+}
+.message {
+	color: red;
+	font-size: 16pt;
+	
+}
